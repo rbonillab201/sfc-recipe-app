@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
-public class UnitOfMessure extends BaseIds {
+public class UnitOfMeasure extends BaseIds {
 	
 	/**
 	 * 

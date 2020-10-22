@@ -24,7 +24,7 @@ public class Ingredient extends BaseIds {
 	private String description;
 	private BigDecimal amoung;
 	@OneToOne(fetch = FetchType.EAGER)
-	private UnitOfMessure uom;
+	private UnitOfMeasure uom;
 	@ManyToOne
 	private Recipe recipe;
 
