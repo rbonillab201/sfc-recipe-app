@@ -15,7 +15,11 @@ import lombok.Data;
 @Entity
 public class Category extends BaseIds{
 
-	 private String description;
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String description;
 	 @ManyToMany(mappedBy = "categories")
 	 private Set<Recipe> recipes; 
 }
