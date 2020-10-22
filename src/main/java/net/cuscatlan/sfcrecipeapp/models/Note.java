@@ -5,16 +5,14 @@ import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 20, 2020
  *
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Entity
-public class Note extends BaseIds {
+public class Note extends BaseIds{
 	
 	/**
 	 * 
