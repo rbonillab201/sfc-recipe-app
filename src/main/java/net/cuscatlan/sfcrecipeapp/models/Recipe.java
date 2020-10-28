@@ -1,5 +1,6 @@
 package net.cuscatlan.sfcrecipeapp.models;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,15 +14,20 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 20, 2020
  *
  */
 
-
-@Data
+@Getter
+@Setter
 @Entity
 public class Recipe extends BaseIds {
 
@@ -35,6 +41,7 @@ public class Recipe extends BaseIds {
 	private Integer servings;
 	private String source;
 	private String url;
+	@Lob
 	private String directions;
 	@Enumerated(EnumType.STRING) 
 	private Difficulty difficulty;
@@ -43,11 +50,24 @@ public class Recipe extends BaseIds {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Note notes;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-	private Set<Ingredient> ingredients;
+	private Set<Ingredient> ingredients = new HashSet<>();
 	@ManyToMany
 	@JoinTable(name = "recipe_categories", 
 			joinColumns = @JoinColumn(name = "recipe_id"),
 			inverseJoinColumns = @JoinColumn(name = "category_id"))
-	private Set<Category> categories;
+	private Set<Category> categories = new HashSet<>();
+	
+	public Recipe addIngredient(Ingredient ingredient){
+		ingredient.setRecipe(this);
+		this.ingredients.add(ingredient);
+		return this;
+	}
+	
+	public void setNotes(Note notes) {
+		if(notes != null) {
+			this.notes = notes;
+			notes.setRecipes(this);
+		}
+	}
 	
 }

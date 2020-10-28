@@ -1,5 +1,7 @@
 package net.cuscatlan.sfcrecipeapp.repositories;
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
 import net.cuscatlan.sfcrecipeapp.models.Category;
@@ -10,5 +12,7 @@ import net.cuscatlan.sfcrecipeapp.models.Category;
  */
 
 public interface CategoryRepository extends CrudRepository<Category, Long> {
+	
+	Optional<Category> findByDescription(String description);
 
 }

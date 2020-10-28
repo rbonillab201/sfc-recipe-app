@@ -13,7 +13,7 @@ import lombok.Data;
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 20, 2020
  *
  */
-
+@Data
 @MappedSuperclass
 public class BaseIds implements Serializable {
 	

@@ -5,12 +5,15 @@ import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 20, 2020
  *
  */
-@Data
+@Getter
+@Setter
 @Entity
 public class Note extends BaseIds{
 	

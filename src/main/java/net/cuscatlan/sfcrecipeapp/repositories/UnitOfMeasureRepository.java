@@ -1,5 +1,7 @@
 package net.cuscatlan.sfcrecipeapp.repositories;
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
 import net.cuscatlan.sfcrecipeapp.models.UnitOfMeasure;
@@ -10,5 +12,7 @@ import net.cuscatlan.sfcrecipeapp.models.UnitOfMeasure;
  */
 
 public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure, Long> {
+	
+	Optional<UnitOfMeasure> findByDescription(String description);
 
 }
