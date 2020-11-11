@@ -14,11 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -26,8 +22,8 @@ import lombok.Setter;
  *
  */
 
-@Getter
 @Setter
+@Getter
 @Entity
 public class Recipe extends BaseIds {
 

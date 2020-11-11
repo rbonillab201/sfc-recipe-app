@@ -7,13 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 20, 2020
  *
  */
-@Data
+@Setter
+@Getter
 @MappedSuperclass
 public class BaseIds implements Serializable {
 	

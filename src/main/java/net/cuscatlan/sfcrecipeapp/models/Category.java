@@ -13,8 +13,7 @@ import lombok.Setter;
  * @author Renato Oswaldo Bonilla (rBonilla) el día Oct 21, 2020
  *
  */
-@Getter
-@Setter
+@Data
 @Entity
 public class Category extends BaseIds{
 
