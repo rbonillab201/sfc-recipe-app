@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,8 +23,7 @@ import lombok.Setter;
  *
  */
 
-@Setter
-@Getter
+@Data
 @Entity
 public class Recipe extends BaseIds {
 
